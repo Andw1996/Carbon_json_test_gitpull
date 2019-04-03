@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:textColor="#FFFFFF"
+        android:id="@+id/environResult"
+
+        android:textSize="24sp"
+        android:hint="Check if renewable production is high"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:textColor="#FFFFFF"
+        android:id="@+id/total"
+
+        android:textSize="24sp"
+        android:hint="total mw made"
+        android:layout_below="@id/environResult"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:textColor="#FFFFFF"
+        android:id="@+id/ctotal"
+
+        android:textSize="24sp"
+        android:hint="total mw made"
+        android:layout_below="@id/total"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:textColor="#FFFFFF"
+        android:id="@+id/cfetchedData"
+        android:textSize="24sp"
+        android:hint="Fetched text here"
+        android:layout_below="@id/ctotal"/>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:textColor="#FFFFFF"
+        android:id="@+id/scrollView"
+        android:layout_height="match_parent"
+        android:layout_below="@id/cfetchedData">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp"
+            android:textColor="#FFFFFF"
+            android:id="@+id/fetchedData"
+            android:textSize="24sp"
+            android:hint="Fetched text here"
+            android:layout_below="@id/scrollView"/>
+
+    </ScrollView>
+
+
+
+
+</RelativeLayout>
