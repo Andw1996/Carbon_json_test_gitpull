@@ -1,7 +1,11 @@
 package com.example.andrewcreaghflynn.carbon_json_test_gitpull;
 
+import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -9,11 +13,12 @@ import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static TextView data;
+
     public static TextView eData;
     public static TextView cData;
-    public static TextView total;
+    public static TextView trafficLight;
     public static TextView cTotal;
+    public static Drawable image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,24 +26,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         cData = (TextView) findViewById(R.id.cfetchedData);
-        data = (TextView) findViewById(R.id.fetchedData);
+        trafficLight = (TextView) findViewById(R.id.trafficLight);
         eData = (TextView) findViewById(R.id.environResult);
-        total = (TextView) findViewById(R.id.total);
         cTotal = (TextView) findViewById(R.id.ctotal);
 
-        fetchData process = new fetchData();
-        fetchC02 process2 = new fetchC02();
+        fetchC02 process = new fetchC02();
         process.execute();
-        process2.execute();
 
 
        TimerTask task = new TimerTask() {
             @Override
             public void run() {
-                fetchData process = new fetchData();
-                fetchC02 process2 = new fetchC02();
 
-                process.execute();
+                fetchC02 process2 = new fetchC02();
                 process2.execute();
             }
         };
@@ -48,5 +48,10 @@ public class MainActivity extends AppCompatActivity {
         long intervalPeriod = 1*1000;
         timer.schedule(task, delay, intervalPeriod);
 
+    }
+
+    public void moreDetail(View v){
+        Intent intent = new Intent(this, MainActivity2.class);
+        startActivity(intent);
     }
 }

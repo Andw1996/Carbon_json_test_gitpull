@@ -53,8 +53,9 @@ public class fetchC02 extends AsyncTask <Void, Void, Void> {
 
                 // calculate total MW produced, display % of renewable for now
 
-                String numAsString = Integer.toString(ec02);
-                eNumAsString2 = numAsString + " gC02/kWh";
+                //String numAsString = Integer.toString(ec02);
+                eNumAsString2 = ec02 + " gC02/kWh";
+                c02 = ec02;
 
             }
         } catch (MalformedURLException e) {
@@ -71,16 +72,16 @@ public class fetchC02 extends AsyncTask <Void, Void, Void> {
     @Override
     protected void onPostExecute(Void aVoid) {
         super.onPostExecute(aVoid);
-        if (c02 <= 399){
-            MainActivity.eData.setTextColor(Color.GREEN);
+        if (c02 <= 499){
+            MainActivity.trafficLight.setBackgroundColor(Color.GREEN);
             MainActivity.eData.setText("It is a great time to use appliances");
 
-        }else if (c02 >= 400 && c02 <= 499){
-            MainActivity.eData.setTextColor(Color.YELLOW);
+        }else if (c02 >= 500 && c02 <= 599){
+            MainActivity.trafficLight.setBackgroundColor(Color.YELLOW);
             MainActivity.eData.setText("It is an ok time to use appliances");
         }
         else{
-            MainActivity.eData.setTextColor(Color.RED);
+            MainActivity.trafficLight.setBackgroundColor(Color.RED);
             MainActivity.eData.setText("It is not a good time to use appliances");
         }
 

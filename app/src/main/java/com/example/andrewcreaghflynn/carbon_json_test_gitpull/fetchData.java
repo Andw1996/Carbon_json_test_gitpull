@@ -96,8 +96,8 @@ public class fetchData extends AsyncTask <Void, Void, Void> {
     protected void onPostExecute(Void aVoid) {
         super.onPostExecute(aVoid);
 
-        MainActivity.data.setText(this.dataParsed);
-        MainActivity.total.setText("The total amount of MW on the grid is currently: " + this.eNumAsString);
+        MainActivity2.data.setText(this.dataParsed);
+        MainActivity2.total.setText("The total amount of MW on the grid is currently: " + this.eNumAsString);
 
     }
 }
