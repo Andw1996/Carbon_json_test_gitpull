@@ -54,4 +54,13 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity2.class);
         startActivity(intent);
     }
+    public void login(View v){
+        Intent intent = new Intent(this, Login.class);
+        startActivity(intent);
+    }
+
+    public void devices(View v){
+        Intent intent = new Intent(this, Devices.class);
+        startActivity(intent);
+    }
 }
