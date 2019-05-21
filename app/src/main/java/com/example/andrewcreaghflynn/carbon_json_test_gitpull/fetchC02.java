@@ -26,7 +26,7 @@ public class fetchC02 extends AsyncTask <Void, Void, Void> {
 
 
     @Override
-    protected Void doInBackground(Void... voids) {
+    protected Void doInBackground(Void... voids) { //new thread
 
         try {
             URL url = new URL("https://carbondown.tk/latestgenration/latest");
